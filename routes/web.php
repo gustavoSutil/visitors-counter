@@ -17,3 +17,4 @@ Route::get('/',function(){
 });
 
 Route::get('/{username}', [App\Http\Controllers\ProfileController::class, 'index'])->name('countprofile');
+

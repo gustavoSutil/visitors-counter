@@ -1,16 +1,17 @@
- <?php
+<?php
 
-namespace  App\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-  
+
+
 class ProfileController extends Controller
 {
-  protected string $GITHUB_API_URL = 'https://api.github.com/users/';
+    protected string $GITHUB_API_URL = 'https://api.github.com/users/';
 
   protected string $username;
   protected string $background_color = '#000000';
@@ -66,7 +67,7 @@ class ProfileController extends Controller
     '<svg xmlns="http://www.w3.org/2000/svg" width="' . ($size * 1.18181818182 * $decimal_point)/2 . '" height="' . ($size * 1.18181818182 + 2) . '" role="img" aria-label="visitors count">' .
   '<title>visitors count</title>'.
       '<g shape-rendering="crispEdges">' .
-        '<rect x="0" width="' . ($size * 1.18181818182 * $decimal_point)/2 . '" height="' . ($size * 1.18181818182 + 2)/2 . '" fill="' . $background_color . '" />' .
+        '<rect x="0" width="' . ($size * 1.18181818182 * $decimal_point)/2 . '" height="' . ($size * 1.18181818182 + 2) . '" fill="' . $background_color . '" />' .
       '</g>' .
       '<g '.$style_bold.' fill="' . $text_color  . '" text-anchor="middle" text-rendering="geometricPrecision"'.
       ' font-family="\'Segoe UI\', Ubuntu, \'Helvetica Neue\', Sans-Serif"'. 
