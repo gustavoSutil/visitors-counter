@@ -14,8 +14,6 @@
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
-// use a custom .env file, because replit has deprecated them or something
-$app->loadEnvironmentFrom('.laravel.env');
 
 /*
 |--------------------------------------------------------------------------

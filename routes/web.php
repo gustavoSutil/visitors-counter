@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Redirect;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function(){
+    return Redirect::to('https://github.com/gustavoSutil/visitors-counter');
+});
 
-Route::get('/{username}', [App\Http\Controllers\ProfileCountController::class, 'index'])->name('countprofile');
+Route::get('/{username}', [App\Http\Controllers\ProfileController::class, 'index'])->name('countprofile');
