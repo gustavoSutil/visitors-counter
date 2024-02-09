@@ -26,13 +26,24 @@
 [Forneça uma breve visão geral do seu projeto, seu propósito e quaisquer informações importantes.]
 
 ## How to Use
-[Choose your language: English](#how-to-use-english) | [Português](#como-utilizar-português)
 
-### How to Use (English)
-[Explain how users can use your project, including any setup instructions, dependencies, or prerequisites. Include examples if necessary.]
+Reference your profile and `__in first access use the initial = <your old counter>__`
 
-### Como Utilizar (Português)
-[Explique como os usuários podem usar seu projeto, incluindo quaisquer instruções de configuração, dependências ou pré-requisitos. Inclua exemplos, se necessário.]
+`For URL:`
+```
+https://visitors-counter-production.up.railway.app/<your-username>?initial=n
+```
+
+`For the outher parameters use &param=value. More informations below:`
+
+| Command | Default | Description |
+|---------|---------|-------------|
+| `background_color` | `000000` |  |
+| `text_color` | `ffffff` |  |
+| `size` | `11` |  |
+| `initial` | `0` |  |
+| `text` | none |  |
+| `bold` | `false` |  |
 
 ## Commands
 [Choose your language: English](#commands-english) | [Português](#comandos-português)
