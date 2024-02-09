@@ -23,11 +23,6 @@ class ProfileController extends Controller
 
   public function index(Request $request,string $username){
     try{
-      $response = Http::get($this->GITHUB_API_URL . $username);
-      $status = $response->status();
-      if ($status > 299) {
-          return 'Usuario não encontrado! Verifique seu username no github.' . $status;   
-      }
       $this->username = $username;
       $this->background_color = '#'.$request->query('background_color','000000');
       $this->text_color = '#'.$request->query('text_color','ffffff');
@@ -86,9 +81,15 @@ class ProfileController extends Controller
   protected function findUser(){
     $profile = Profile::where('username', $this->username)->first();
     if(!$profile){
-      return  Profile::create([
-        'username' => $this->username,
-        'acesses' => $this->initial]);
+      $response = Http::get($this->GITHUB_API_URL . $username);
+      $status = $response->status();
+      if ($status > 299) {
+          throw $error = \Illuminate\Validation\ValidationException::withMessages(['Usuario não encontrado! Verifique seu username no github.' . $status ]);   
+      }else{
+        return  Profile::create([
+          'username' => $this->username,
+          'acesses' => $this->initial]);
+        }
       }
     else{
       return $profile;
